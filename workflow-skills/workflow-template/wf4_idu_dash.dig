@@ -1,0 +1,9 @@
+_export:
+  !include : 'config/src_params.yml'
+  td:
+    database: cdp_unification_${sub}
+    src_database: cdp_unification_${sub}
+
++create_dashboard:
+  # _export:
+  call>: idu_dashboard/idu_dashboard_launch

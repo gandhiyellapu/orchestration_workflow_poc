@@ -1,0 +1,28 @@
+_export:
+  !include : 'config/src_params.yml'
+  td:
+    database: cdp_unification_${sub}
+
++create_golden_database:
+  td_ddl>:
+  create_databases: ["${gld}_${sub}"]
+
++profile_identifiers:
+  td>: golden/queries/all_profile_identifiers.sql
+  create_table: ${gld}_${sub}.profile_identifiers
+
++attribute_tables:
+  _parallel: true
+  for_each>:
+    attr: ${golden_attributes}
+  _do:
+    td>: golden/queries/attributes/${attr}.sql
+    create_table: ${gld}_${sub}.attr_${attr}
+
++copy_enriched_tables:
+  _parallel: true
+  for_each>:
+    tbl: ${golden_enriched_tables}
+  _do:
+    td>: golden/queries/copy_enriched_table.sql
+    create_table: ${gld}_${sub}.${tbl}

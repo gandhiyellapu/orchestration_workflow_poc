@@ -1,0 +1,11 @@
+_export:
+  !include : 'config/src_params.yml'
+  td:
+    database: cdp_unification_${sub}
+    src_database: cdp_unification_${sub}
+
++run_profiling:
+  # echo>: "Running step ${step_name} and workflow name ${workflow_to_run} when run_all ${run_all} and historical run are empty or failed."
+  require>: data_profiling_launch
+  project_name: data_profiling_prod
+
