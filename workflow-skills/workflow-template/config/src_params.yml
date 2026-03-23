@@ -1,0 +1,80 @@
+## DATABASE CONFIG ##
+raw: raw
+prp: prp
+src: src
+stg: stg
+gld: gldn
+ana: analytics 
+sub: retail_va_dev
+
+## WORKFLOW CONFIG ##
+run_all: true
+project_name: retail-starter-pack_qa_br-retail
+
+## INSTANCE CONFIG ## 
+site: us # us | eu 
+
+## STAGING CONFIG ## 
+## DO NOT CHANGE ## 
+tables: 
+  - consents
+  - app_analytics
+  - email_activity
+  - formfills
+  - loyalty_profile
+  - order_details 
+  - order_digital_transactions 
+  - order_offline_transactions 
+  - pageviews
+  - survey_responses
+  - sms_activity
+
+## UNIFICATION CONFIG ##
+unification_id : retail_unification_id
+
+## GOLDEN LAYER CONFIG ##
+golden_attributes:
+  - email_activity
+  - order_details
+  - pageviews
+  - sms_activity
+  - survey_responses
+  - transactions
+
+golden_enriched_tables:
+  - enriched_consents
+  - enriched_email_activity
+  - enriched_order_details
+  - enriched_pageviews
+  - enriched_sms_activity
+
+## OPTIONAL WORKFLOWS ##
+optional_workflows:
+  include_idu_dashboard: true
+  include_analytics_dashboard: true
+
+## IDU DASHBOARD CONFIG ##
+idu_data_model_name: "Retail Value Accelerator - IDU Dashboard"  # Data model name for IDU Dashboard
+
+## NOTIFICATION CONFIG ##
+notification_emails:
+  - global-presales-demo+dev@treasure-data.com
+
+## ANALYTICS CONFIG ## 
+model_config_table: 'analytics_datamodel_build_history'       ## table where model OID is saved to be used for udpating datamodel/dashboard via API
+create_dashboard: 'yes'
+dashboards: ['sales_analytics', 'idu_dashboard', 'web_analytics']
+dash_users_list: ['global-presales-demo+dev@treasure-data.com']
+
+## PARENT SEGMENT/SEGMENT CONFIG ## 
+segment:
+  # create if first time and no changes need each run 
+  # update if changes to parent segment are made in config
+  run_type: create
+  tables:
+    parent_segment_templates: parent_segment_template
+    segment_templates: segment_templates
+    parent_segment_creation: automation_parent_segments
+    active_audience: active_audience
+    segment_logs: segment_logs
+

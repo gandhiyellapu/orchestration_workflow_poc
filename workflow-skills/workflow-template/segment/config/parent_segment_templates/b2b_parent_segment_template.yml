@@ -1,0 +1,696 @@
+id: null
+name: B2B Customer Master Segment
+description: B2B CDP Master Parent Segment
+scheduleType: none
+scheduleOption: ""
+timezone: UTC
+matrixUpdatedAt: ""
+workflowHiveOnly: false
+hiveEngineVersion: cdpaudience
+hivePoolName: ""
+prestoPoolName: ""
+population:
+  maxActivationBehaviorRow: 20
+  allowActivationBehavior: false
+rootFolderId: ""
+master:
+  parentDatabaseName: gldn_${sub}
+  parentTableName: profile_identifiers
+  parentKey: ${unification_id}
+attributes:
+# IDENTIFIERS
+- audienceId: null
+  id: null
+  name: Account ID
+  type: string
+  parentDatabaseName: gldn_${sub}
+  parentTableName: profile_identifiers
+  parentColumn: td_account_id
+  parentKey: ${unification_id}
+  foreignKey: ${unification_id}
+  matrixColumnName: td_account_id
+  groupingName: Identity
+
+- audienceId: null
+  id: null
+  name: Contact Email
+  type: string
+  parentDatabaseName: gldn_${sub}
+  parentTableName: profile_identifiers
+  parentColumn: email
+  parentKey: ${unification_id}
+  foreignKey: ${unification_id}
+  matrixColumnName: email
+  groupingName: Identity
+
+- audienceId: null
+  id: null
+  name: Contact Phone
+  type: string
+  parentDatabaseName: gldn_${sub}
+  parentTableName: profile_identifiers
+  parentColumn: phone_number
+  parentKey: ${unification_id}
+  foreignKey: ${unification_id}
+  matrixColumnName: phone_number
+  groupingName: Identity
+
+# DEMOGRAPHICS
+- audienceId: null
+  id: null
+  name: First Name
+  type: string
+  parentDatabaseName: gldn_${sub}
+  parentTableName: unification_master
+  parentColumn: first_name
+  parentKey: ${unification_id}
+  foreignKey: ${unification_id}
+  matrixColumnName: first_name
+  groupingName: Demographics
+
+- audienceId: null
+  id: null
+  name: Last Name
+  type: string
+  parentDatabaseName: gldn_${sub}
+  parentTableName: unification_master
+  parentColumn: last_name
+  parentKey: ${unification_id}
+  foreignKey: ${unification_id}
+  matrixColumnName: last_name
+  groupingName: Demographics
+
+- audienceId: null
+  id: null
+  name: Job Title
+  type: string
+  parentDatabaseName: gldn_${sub}
+  parentTableName: unification_master
+  parentColumn: job_title
+  parentKey: ${unification_id}
+  foreignKey: ${unification_id}
+  matrixColumnName: job_title
+  groupingName: Demographics
+
+- audienceId: null
+  id: null
+  name: Department
+  type: string
+  parentDatabaseName: gldn_${sub}
+  parentTableName: unification_master
+  parentColumn: department
+  parentKey: ${unification_id}
+  foreignKey: ${unification_id}
+  matrixColumnName: department
+  groupingName: Demographics
+
+- audienceId: null
+  id: null
+  name: Seniority
+  type: string
+  parentDatabaseName: gldn_${sub}
+  parentTableName: unification_master
+  parentColumn: seniority
+  parentKey: ${unification_id}
+  foreignKey: ${unification_id}
+  matrixColumnName: seniority
+  groupingName: Demographics
+
+- audienceId: null
+  id: null
+  name: Is Decision Maker
+  type: string
+  parentDatabaseName: gldn_${sub}
+  parentTableName: unification_master
+  parentColumn: is_decision_maker
+  parentKey: ${unification_id}
+  foreignKey: ${unification_id}
+  matrixColumnName: is_decision_maker
+  groupingName: Demographics
+
+# COMPANY / FIRMOGRAPHICS
+- audienceId: null
+  id: null
+  name: Account Name
+  type: string
+  parentDatabaseName: gldn_${sub}
+  parentTableName: unification_master
+  parentColumn: account_name
+  parentKey: ${unification_id}
+  foreignKey: ${unification_id}
+  matrixColumnName: account_name
+  groupingName: Company
+
+- audienceId: null
+  id: null
+  name: Industry
+  type: string
+  parentDatabaseName: gldn_${sub}
+  parentTableName: unification_master
+  parentColumn: industry
+  parentKey: ${unification_id}
+  foreignKey: ${unification_id}
+  matrixColumnName: industry
+  groupingName: Company
+
+- audienceId: null
+  id: null
+  name: Account Tier
+  type: string
+  parentDatabaseName: gldn_${sub}
+  parentTableName: unification_master
+  parentColumn: account_tier
+  parentKey: ${unification_id}
+  foreignKey: ${unification_id}
+  matrixColumnName: account_tier
+  groupingName: Company
+
+- audienceId: null
+  id: null
+  name: Annual Revenue
+  type: number
+  parentDatabaseName: gldn_${sub}
+  parentTableName: unification_master
+  parentColumn: annual_revenue
+  parentKey: ${unification_id}
+  foreignKey: ${unification_id}
+  matrixColumnName: annual_revenue
+  groupingName: Company
+
+- audienceId: null
+  id: null
+  name: Company Size
+  type: number
+  parentDatabaseName: gldn_${sub}
+  parentTableName: unification_master
+  parentColumn: company_size
+  parentKey: ${unification_id}
+  foreignKey: ${unification_id}
+  matrixColumnName: company_size
+  groupingName: Company
+
+- audienceId: null
+  id: null
+  name: Country
+  type: string
+  parentDatabaseName: gldn_${sub}
+  parentTableName: unification_master
+  parentColumn: country
+  parentKey: ${unification_id}
+  foreignKey: ${unification_id}
+  matrixColumnName: country
+  groupingName: Company
+
+- audienceId: null
+  id: null
+  name: Account Status
+  type: string
+  parentDatabaseName: gldn_${sub}
+  parentTableName: unification_master
+  parentColumn: account_status
+  parentKey: ${unification_id}
+  foreignKey: ${unification_id}
+  matrixColumnName: account_status
+  groupingName: Company
+
+# SUBSCRIPTION
+- audienceId: null
+  id: null
+  name: Subscription Status
+  type: string
+  parentDatabaseName: gldn_${sub}
+  parentTableName: attr_subscriptions
+  parentColumn: subscription_status
+  parentKey: ${unification_id}
+  foreignKey: ${unification_id}
+  matrixColumnName: subscription_status
+  groupingName: Subscription
+
+- audienceId: null
+  id: null
+  name: Subscription Plan
+  type: string
+  parentDatabaseName: gldn_${sub}
+  parentTableName: attr_subscriptions
+  parentColumn: subscription_plan
+  parentKey: ${unification_id}
+  foreignKey: ${unification_id}
+  matrixColumnName: subscription_plan
+  groupingName: Subscription
+
+- audienceId: null
+  id: null
+  name: Monthly Recurring Revenue
+  type: number
+  parentDatabaseName: gldn_${sub}
+  parentTableName: attr_subscriptions
+  parentColumn: mrr
+  parentKey: ${unification_id}
+  foreignKey: ${unification_id}
+  matrixColumnName: mrr
+  groupingName: Subscription
+
+- audienceId: null
+  id: null
+  name: Subscription Start Date
+  type: timestamp
+  parentDatabaseName: gldn_${sub}
+  parentTableName: attr_subscriptions
+  parentColumn: subscription_start_date
+  parentKey: ${unification_id}
+  foreignKey: ${unification_id}
+  matrixColumnName: subscription_start_date
+  groupingName: Subscription
+
+- audienceId: null
+  id: null
+  name: Renewal Date
+  type: timestamp
+  parentDatabaseName: gldn_${sub}
+  parentTableName: attr_subscriptions
+  parentColumn: renewal_date
+  parentKey: ${unification_id}
+  foreignKey: ${unification_id}
+  matrixColumnName: renewal_date
+  groupingName: Subscription
+
+# SUPPORT
+- audienceId: null
+  id: null
+  name: Total Support Cases
+  type: number
+  parentDatabaseName: gldn_${sub}
+  parentTableName: attr_support_cases
+  parentColumn: total_cases
+  parentKey: ${unification_id}
+  foreignKey: ${unification_id}
+  matrixColumnName: total_cases
+  groupingName: Support
+
+- audienceId: null
+  id: null
+  name: Open Cases
+  type: number
+  parentDatabaseName: gldn_${sub}
+  parentTableName: attr_support_cases
+  parentColumn: open_cases
+  parentKey: ${unification_id}
+  foreignKey: ${unification_id}
+  matrixColumnName: open_cases
+  groupingName: Support
+
+- audienceId: null
+  id: null
+  name: Latest Case Status
+  type: string
+  parentDatabaseName: gldn_${sub}
+  parentTableName: attr_support_cases
+  parentColumn: latest_case_status
+  parentKey: ${unification_id}
+  foreignKey: ${unification_id}
+  matrixColumnName: latest_case_status
+  groupingName: Support
+
+- audienceId: null
+  id: null
+  name: Latest Case Priority
+  type: string
+  parentDatabaseName: gldn_${sub}
+  parentTableName: attr_support_cases
+  parentColumn: latest_case_priority
+  parentKey: ${unification_id}
+  foreignKey: ${unification_id}
+  matrixColumnName: latest_case_priority
+  groupingName: Support
+
+# SALES
+- audienceId: null
+  id: null
+  name: Total Opportunities
+  type: number
+  parentDatabaseName: gldn_${sub}
+  parentTableName: attr_sales_opportunities
+  parentColumn: total_opportunities
+  parentKey: ${unification_id}
+  foreignKey: ${unification_id}
+  matrixColumnName: total_opportunities
+  groupingName: Sales
+
+- audienceId: null
+  id: null
+  name: Open Opportunities
+  type: number
+  parentDatabaseName: gldn_${sub}
+  parentTableName: attr_sales_opportunities
+  parentColumn: open_opportunities
+  parentKey: ${unification_id}
+  foreignKey: ${unification_id}
+  matrixColumnName: open_opportunities
+  groupingName: Sales
+
+- audienceId: null
+  id: null
+  name: Total Pipeline Value
+  type: number
+  parentDatabaseName: gldn_${sub}
+  parentTableName: attr_sales_opportunities
+  parentColumn: total_pipeline_value
+  parentKey: ${unification_id}
+  foreignKey: ${unification_id}
+  matrixColumnName: total_pipeline_value
+  groupingName: Sales
+
+- audienceId: null
+  id: null
+  name: Latest Opportunity Stage
+  type: string
+  parentDatabaseName: gldn_${sub}
+  parentTableName: attr_sales_opportunities
+  parentColumn: latest_opportunity_stage
+  parentKey: ${unification_id}
+  foreignKey: ${unification_id}
+  matrixColumnName: latest_opportunity_stage
+  groupingName: Sales
+
+# ENGAGEMENT
+- audienceId: null
+  id: null
+  name: Total Pageviews
+  type: number
+  parentDatabaseName: gldn_${sub}
+  parentTableName: attr_pageviews
+  parentColumn: total_pageviews
+  parentKey: ${unification_id}
+  foreignKey: ${unification_id}
+  matrixColumnName: total_pageviews
+  groupingName: Engagement
+
+- audienceId: null
+  id: null
+  name: Total Sessions
+  type: number
+  parentDatabaseName: gldn_${sub}
+  parentTableName: attr_pageviews
+  parentColumn: total_sessions
+  parentKey: ${unification_id}
+  foreignKey: ${unification_id}
+  matrixColumnName: total_sessions
+  groupingName: Engagement
+
+- audienceId: null
+  id: null
+  name: Days Since Last Visit
+  type: number
+  parentDatabaseName: gldn_${sub}
+  parentTableName: attr_pageviews
+  parentColumn: days_since_last_visit
+  parentKey: ${unification_id}
+  foreignKey: ${unification_id}
+  matrixColumnName: days_since_last_visit
+  groupingName: Engagement
+
+- audienceId: null
+  id: null
+  name: Product Usage Events
+  type: number
+  parentDatabaseName: gldn_${sub}
+  parentTableName: attr_product_usage
+  parentColumn: total_usage_events
+  parentKey: ${unification_id}
+  foreignKey: ${unification_id}
+  matrixColumnName: total_usage_events
+  groupingName: Engagement
+
+- audienceId: null
+  id: null
+  name: Last Product Usage Date
+  type: timestamp
+  parentDatabaseName: gldn_${sub}
+  parentTableName: attr_product_usage
+  parentColumn: last_usage_date
+  parentKey: ${unification_id}
+  foreignKey: ${unification_id}
+  matrixColumnName: last_usage_date
+  groupingName: Engagement
+
+behaviors:
+# SUBSCRIPTIONS BEHAVIOR
+- audienceId: null
+  id: null
+  name: Subscriptions
+  parentDatabaseName: gldn_${sub}
+  parentTableName: enriched_subscriptions
+  parentKey: ${unification_id}
+  foreignKey: ${unification_id}
+  matrixDatabaseName: cdp_audience_${sub}
+  matrixTableName: behavior_subscriptions
+  allColumns: false
+  defaultTimeFilterEnabled: false
+  isRealtime: false
+  schema:
+  - name: Subscription ID
+    type: string
+    parentColumn: subscription_id
+    matrixColumnName: subscription_id
+  - name: Subscription Plan
+    type: string
+    parentColumn: subscription_plan
+    matrixColumnName: subscription_plan
+  - name: Status
+    type: string
+    parentColumn: status
+    matrixColumnName: status
+  - name: MRR
+    type: number
+    parentColumn: mrr
+    matrixColumnName: mrr
+  - name: Start Date
+    type: timestamp
+    parentColumn: subscription_start_date
+    matrixColumnName: subscription_start_date
+  - name: Renewal Date
+    type: timestamp
+    parentColumn: renewal_date
+    matrixColumnName: renewal_date
+
+# SUPPORT CASES BEHAVIOR
+- audienceId: null
+  id: null
+  name: Support Cases
+  parentDatabaseName: gldn_${sub}
+  parentTableName: enriched_support_cases
+  parentKey: ${unification_id}
+  foreignKey: ${unification_id}
+  matrixDatabaseName: cdp_audience_${sub}
+  matrixTableName: behavior_support_cases
+  allColumns: false
+  defaultTimeFilterEnabled: false
+  isRealtime: false
+  schema:
+  - name: Case ID
+    type: string
+    parentColumn: case_id
+    matrixColumnName: case_id
+  - name: Case Status
+    type: string
+    parentColumn: case_status
+    matrixColumnName: case_status
+  - name: Case Priority
+    type: string
+    parentColumn: case_priority
+    matrixColumnName: case_priority
+  - name: Subject
+    type: string
+    parentColumn: subject
+    matrixColumnName: subject
+  - name: Created Date
+    type: timestamp
+    parentColumn: created_date
+    matrixColumnName: created_date
+  - name: Resolved Date
+    type: timestamp
+    parentColumn: resolved_date
+    matrixColumnName: resolved_date
+
+# SALES OPPORTUNITIES BEHAVIOR
+- audienceId: null
+  id: null
+  name: Sales Opportunities
+  parentDatabaseName: gldn_${sub}
+  parentTableName: enriched_sales_opportunities
+  parentKey: ${unification_id}
+  foreignKey: ${unification_id}
+  matrixDatabaseName: cdp_audience_${sub}
+  matrixTableName: behavior_sales_opportunities
+  allColumns: false
+  defaultTimeFilterEnabled: false
+  isRealtime: false
+  schema:
+  - name: Opportunity ID
+    type: string
+    parentColumn: opportunity_id
+    matrixColumnName: opportunity_id
+  - name: Opportunity Stage
+    type: string
+    parentColumn: opportunity_stage
+    matrixColumnName: opportunity_stage
+  - name: Amount
+    type: number
+    parentColumn: amount
+    matrixColumnName: amount
+  - name: Close Date
+    type: timestamp
+    parentColumn: close_date
+    matrixColumnName: close_date
+  - name: Created Date
+    type: timestamp
+    parentColumn: created_date
+    matrixColumnName: created_date
+
+# PAGEVIEWS BEHAVIOR
+- audienceId: null
+  id: null
+  name: Pageviews
+  parentDatabaseName: gldn_${sub}
+  parentTableName: enriched_pageviews
+  parentKey: ${unification_id}
+  foreignKey: ${unification_id}
+  matrixDatabaseName: cdp_audience_${sub}
+  matrixTableName: behavior_pageviews
+  allColumns: false
+  defaultTimeFilterEnabled: false
+  isRealtime: false
+  schema:
+  - name: Page Title
+    type: string
+    parentColumn: td_title
+    matrixColumnName: td_title
+  - name: Page URL
+    type: string
+    parentColumn: td_url
+    matrixColumnName: td_url
+  - name: Page Path
+    type: string
+    parentColumn: td_path
+    matrixColumnName: td_path
+  - name: Event Date
+    type: timestamp
+    parentColumn: event_datetime_unix
+    matrixColumnName: event_datetime_unix
+  - name: Browser
+    type: string
+    parentColumn: td_browser
+    matrixColumnName: td_browser
+  - name: Device
+    type: string
+    parentColumn: td_platform
+    matrixColumnName: td_platform
+
+# PARTNER ACTIVITIES BEHAVIOR
+- audienceId: null
+  id: null
+  name: Partner Activities
+  parentDatabaseName: gldn_${sub}
+  parentTableName: enriched_partner_activities
+  parentKey: ${unification_id}
+  foreignKey: ${unification_id}
+  matrixDatabaseName: cdp_audience_${sub}
+  matrixTableName: behavior_partner_activities
+  allColumns: false
+  defaultTimeFilterEnabled: false
+  isRealtime: false
+  schema:
+  - name: Activity ID
+    type: string
+    parentColumn: activity_id
+    matrixColumnName: activity_id
+  - name: Activity Type
+    type: string
+    parentColumn: activity_type
+    matrixColumnName: activity_type
+  - name: Activity Status
+    type: string
+    parentColumn: activity_status
+    matrixColumnName: activity_status
+  - name: Activity Date
+    type: timestamp
+    parentColumn: activity_date
+    matrixColumnName: activity_date
+  - name: Next Step Date
+    type: timestamp
+    parentColumn: next_step_date
+    matrixColumnName: next_step_date
+
+# PRODUCT USAGE BEHAVIOR
+- audienceId: null
+  id: null
+  name: Product Usage
+  parentDatabaseName: gldn_${sub}
+  parentTableName: enriched_product_usage
+  parentKey: ${unification_id}
+  foreignKey: ${unification_id}
+  matrixDatabaseName: cdp_audience_${sub}
+  matrixTableName: behavior_product_usage
+  allColumns: false
+  defaultTimeFilterEnabled: false
+  isRealtime: false
+  schema:
+  - name: Event Type
+    type: string
+    parentColumn: event_type
+    matrixColumnName: event_type
+  - name: Feature Used
+    type: string
+    parentColumn: feature_name
+    matrixColumnName: feature_name
+  - name: Event Timestamp
+    type: timestamp
+    parentColumn: event_timestamp
+    matrixColumnName: event_timestamp
+  - name: Session ID
+    type: string
+    parentColumn: session_id
+    matrixColumnName: session_id
+
+# CONTACTS BEHAVIOR
+- audienceId: null
+  id: null
+  name: All Contacts
+  parentDatabaseName: gldn_${sub}
+  parentTableName: enriched_contacts
+  parentKey: ${unification_id}
+  foreignKey: ${unification_id}
+  matrixDatabaseName: cdp_audience_${sub}
+  matrixTableName: behavior_contacts
+  allColumns: false
+  defaultTimeFilterEnabled: false
+  isRealtime: false
+  schema:
+  - name: Contact ID
+    type: string
+    parentColumn: contact_id
+    matrixColumnName: contact_id
+  - name: Email
+    type: string
+    parentColumn: email
+    matrixColumnName: email
+  - name: Phone
+    type: string
+    parentColumn: phone_number
+    matrixColumnName: phone_number
+  - name: First Name
+    type: string
+    parentColumn: first_name
+    matrixColumnName: first_name
+  - name: Last Name
+    type: string
+    parentColumn: last_name
+    matrixColumnName: last_name
+  - name: Job Title
+    type: string
+    parentColumn: job_title
+    matrixColumnName: job_title
+  - name: Created Date
+    type: timestamp
+    parentColumn: created_date
+    matrixColumnName: created_date

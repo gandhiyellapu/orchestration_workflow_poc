@@ -1,0 +1,692 @@
+include_all_prp_cols: true
+schema_change:
+- columns:
+  - prp: id
+    src: id
+    type: varchar
+  - prp: id_type
+    src: id_type
+    type: varchar
+  - prp: consent_type
+    src: consent_type
+    type: varchar
+  - prp: consent_flag
+    src: consent_flag
+    type: varchar
+  - prp: time
+    src: time
+    type: bigint
+  prp_table_name: consents 
+  src_table_name: consents
+- columns:
+  - prp: datetime
+    src: activity_date
+    type: varchar
+  - prp: null
+    src: campaign_id
+    type: varchar
+  - prp: campaign_name
+    src: campaign_name
+    type: varchar
+  - prp: email
+    src: email
+    type: varchar
+  - prp: phone_number
+    src: phone_number
+    type: varchar
+  - prp: null
+    src: customer_id
+    type: varchar
+  - prp: metric_name
+    src: activity_type
+    type: varchar
+  - prp: null
+    src: time
+    type: bigint
+  prp_table_name: email_activity
+  src_table_name: email_activity
+- columns:
+  - prp: email
+    src: email
+    type: varchar
+  - prp: null
+    src: phone_number
+    type: varchar
+  - prp: td_global_id
+    src: td_global_id
+    type: varchar
+  - prp: td_client_id
+    src: td_client_id
+    type: varchar
+  - prp: null
+    src: form_type
+    type: varchar
+  - prp: time
+    src: time
+    type: bigint
+  prp_table_name: formfills
+  src_table_name: formfills
+- columns:
+  - prp: external_id
+    src: customer_id
+    type: varchar
+  - prp: email
+    src: email
+    type: varchar
+  - prp: null
+    src: secondary_email
+    type: varchar
+  - prp: phone_number
+    src: phone_number
+    type: varchar
+  - prp: first_name
+    src: first_name
+    type: varchar
+  - prp: last_name
+    src: last_name
+    type: varchar
+  - prp: address1
+    src: address
+    type: varchar
+  - prp: country_code
+    src: country
+    type: varchar
+  - prp: city
+    src: city
+    type: varchar
+  - prp: state
+    src: state
+    type: varchar
+  - prp: zip
+    src: postal_code
+    type: varchar
+  - prp: null
+    src: gender
+    type: varchar
+  - prp: null
+    src: birthday
+    type: varchar
+  - prp: loyalty_is_opt_in
+    src: membership_status
+    type: varchar
+  - prp: loyalty_vip_tier_name
+    src: membership_tier
+    type: varchar
+  - prp: null
+    src: net_redeemable_balance
+    type: double
+  - prp: null
+    src: net_debits
+    type: double
+  - prp: loyalty_points_earned
+    src: membership_points_earned
+    type: bigint
+  - prp: loyalty_points_balance
+    src: membership_points_balance
+    type: bigint
+  - prp: null
+    src: membership_points_pending
+    type: bigint
+  - prp: loyalty_total_redemptions
+    src: total_loyalty_purchases
+    type: bigint
+  - prp: loyalty_vip_expiration_date
+    src: current_membership_level_expiration
+    type: varchar
+  - prp: null
+    src: location_id
+    type: varchar
+  - prp: null
+    src: location_city
+    type: varchar
+  - prp: account_created_at
+    src: created_at
+    type: varchar
+  - prp: account_updated_at
+    src: updated_at
+    type: varchar
+  - prp: null
+    src: date_of_birth
+    type: varchar
+  - prp: null
+    src: store_city
+    type: varchar
+  - prp: null
+    src: store_id
+    type: varchar
+  - prp: null
+    src: store_address
+    type: varchar
+  - prp: null
+    src: wishlist_item
+    type: varchar
+  - prp: time
+    src: time
+    type: bigint
+  prp_table_name: loyalty_profile
+  src_table_name: loyalty_profile
+- columns:
+  - prp: order_id
+    src: order_no
+    type: varchar
+  - prp: null
+    src: order_transaction_type
+    type: varchar
+  - prp: quantity
+    src: quantity
+    type: bigint
+  - prp: product_id
+    src: product_id
+    type: varchar
+  - prp: product_name
+    src: product_name
+    type: varchar
+  - prp: variant_title
+    src: product_size
+    type: varchar
+  - prp: null
+    src: product_color
+    type: varchar
+  - prp: null
+    src: product_description
+    type: varchar
+  - prp: product_type
+    src: product_department
+    type: varchar
+  - prp: null
+    src: product_sub_department
+    type: varchar
+  - prp: pre_tax_price
+    src: list_price
+    type: double
+  - prp: total_discount
+    src: discount_offered
+    type: double
+  - prp: null
+    src: tax
+    type: double
+  - prp: price
+    src: net_price
+    type: double
+  - prp: line_item_id
+    src: order_line_no
+    type: bigint
+  - prp: order_created_at
+    src: order_datetime
+    type: varchar
+  - prp: order_updated_at
+    src: order_updated_datetime
+    type: varchar
+  - prp: null
+    src: time
+    type: bigint
+  prp_table_name: order_details
+  src_table_name: order_details
+- columns:
+  - prp: user_id
+    src: customer_id
+    type: varchar
+  - prp: email
+    src: email
+    type: varchar
+  - prp: phone
+    src: phone_number
+    type: varchar
+  - prp: null
+    src: token
+    type: varchar
+  - prp: id
+    src: order_no
+    type: varchar
+  - prp: created_at
+    src: order_datetime
+    type: varchar
+  - prp: order_updated_at
+    src: order_updated_datetime
+    type: varchar
+  - prp: null
+    src: payment_method
+    type: varchar
+  - prp: discount_codes_string
+    src: promo_code
+    type: varchar
+  - prp: null
+    src: markdown_flag
+    type: varchar
+  - prp: null
+    src: guest_checkout_flag
+    type: varchar
+  - prp: location_id
+    src: location_id
+    type: varchar
+  - prp: null
+    src: location_address
+    type: varchar
+  - prp: null
+    src: location_city
+    type: varchar
+  - prp: null
+    src: location_state
+    type: varchar
+  - prp: null
+    src: location_postal_code
+    type: varchar
+  - prp: null
+    src: location_country
+    type: varchar
+  - prp: null
+    src: order_transaction_type
+    type: varchar
+  - prp: current_total_price
+    src: amount
+    type: double
+  - prp: current_total_discounts
+    src: discount_amount
+    type: double
+  - prp: current_total_price
+    src: net_amount
+    type: double
+  - prp: billing_address
+    src: billing_address
+    type: varchar
+  - prp: billing_city
+    src: billing_city
+    type: varchar
+  - prp: billing_province
+    src: billing_state
+    type: varchar
+  - prp: billing_zip
+    src: billing_postal_code
+    type: varchar
+  - prp: billing_country
+    src: billing_country
+    type: varchar
+  - prp: null
+    src: shipping_cost
+    type: bigint
+  - prp: null
+    src: expidated_ship_flag
+    type: varchar
+  - prp: shipping_address
+    src: shipping_address
+    type: varchar
+  - prp: shipping_city
+    src: shipping_city
+    type: varchar
+  - prp: shipping_province
+    src: shipping_state
+    type: varchar
+  - prp: shipping_zip
+    src: shipping_postal_code
+    type: varchar
+  - prp: shipping_country
+    src: shipping_country
+    type: varchar
+  - prp: null
+    src: bopis_flag
+    type: varchar
+  - prp: null
+    src: product_color
+    type: varchar
+  - prp: null
+    src: projected_delivery_date
+    type: varchar
+  - prp: null
+    src: time
+    type: bigint
+  prp_table_name: order_digital_transactions
+  src_table_name: order_digital_transactions
+- columns:
+  - prp: customer_id
+    src: customer_id
+    type: varchar
+  - prp: email
+    src: email
+    type: varchar
+  - prp: phone_number
+    src: phone_number
+    type: varchar
+  - prp: token
+    src: token
+    type: varchar
+  - prp: order_no
+    src: order_no
+    type: varchar
+  - prp: order_datetime
+    src: order_datetime
+    type: varchar
+  - prp: order_updated_at
+    src: order_updated_datetime
+    type: varchar
+  - prp: payment_method
+    src: payment_method
+    type: varchar
+  - prp: promo_code
+    src: promo_code
+    type: varchar
+  - prp: markdown_flag
+    src: markdown_flag
+    type: varchar
+  - prp: location_id
+    src: location_id
+    type: varchar
+  - prp: location_address
+    src: location_address
+    type: varchar
+  - prp: location_city
+    src: location_city
+    type: varchar
+  - prp: location_state
+    src: location_state
+    type: varchar
+  - prp: location_postal_code
+    src: location_postal_code
+    type: varchar
+  - prp: location_country
+    src: location_country
+    type: varchar
+  - prp: amount
+    src: amount
+    type: double
+  - prp: discount_amount
+    src: discount_amount
+    type: double
+  - prp: net_amount
+    src: net_amount
+    type: double
+  - prp: time
+    src: time
+    type: bigint
+  prp_table_name: not exists
+  src_table_name: order_offline_transactions
+- columns:
+  - prp: td_url
+    src: td_url
+    type: varchar
+  - prp: td_path
+    src: td_path
+    type: varchar
+  - prp: td_title
+    src: td_title
+    type: varchar
+  - prp: td_description
+    src: td_description
+    type: varchar
+  - prp: td_host
+    src: td_host
+    type: varchar
+  - prp: td_language
+    src: td_language
+    type: varchar
+  - prp: td_charset
+    src: td_charset
+    type: varchar
+  - prp: null
+    src: td_os
+    type: varchar
+  - prp: null
+    src: td_os_version
+    type: varchar
+  - prp: td_user_agent
+    src: td_user_agent
+    type: varchar
+  - prp: td_platform
+    src: td_platform
+    type: varchar
+  - prp: td_screen
+    src: td_screen
+    type: varchar
+  - prp: td_viewport
+    src: td_viewport
+    type: varchar
+  - prp: td_color
+    src: td_color
+    type: varchar
+  - prp: td_version
+    src: td_version
+    type: varchar
+  - prp: td_global_id
+    src: td_global_id
+    type: varchar
+  - prp: td_client_id
+    src: td_client_id
+    type: varchar
+  - prp: td_ip
+    src: td_ip
+    type: varchar
+  - prp: td_referrer
+    src: td_referrer
+    type: varchar
+  - prp: null
+    src: td_browser
+    type: varchar
+  - prp: null
+    src: td_browser_version
+    type: varchar
+  - prp: time
+    src: time
+    type: bigint
+  prp_table_name: pageviews
+  src_table_name: pageviews
+- columns:
+  - prp: app_name
+    src: app_name
+    type: bigint
+  - prp: analytics_id
+    src: analytics_id
+    type: bigint
+  - prp: user_id
+    src: user_id
+    type: varchar
+  - prp: email
+    src: email
+    type: varchar
+  - prp: phone_number
+    src: phone_number
+    type: varchar
+  - prp: device_id
+    src: device_id
+    type: varchar
+  - prp: event_time
+    src: event_time
+    type: varchar
+  - prp: event_id
+    src: event_id
+    type: bigint
+  - prp: session_id
+    src: session_id
+    type: bigint
+  - prp: event_type
+    src: event_type
+    type: varchar
+  - prp: version_name
+    src: version_name
+    type: varchar
+  - prp: adid
+    src: adid
+    type: varchar
+  - prp: groups
+    src: groups
+    type: varchar
+  - prp: idfa
+    src: idfa
+    type: varchar
+  - prp: platform
+    src: platform
+    type: varchar
+  - prp: os_name
+    src: os_name
+    type: varchar
+  - prp: os_version
+    src: os_version
+    type: varchar
+  - prp: device_brand
+    src: device_brand
+    type: varchar
+  - prp: device_manufacturer
+    src: device_manufacturer
+    type: varchar
+  - prp: device_model
+    src: device_model
+    type: varchar
+  - prp: device_carrier
+    src: device_carrier
+    type: varchar
+  - prp: device_type
+    src: device_type
+    type: varchar
+  - prp: device_family
+    src: device_family
+    type: varchar
+  - prp: location_lat
+    src: location_lat
+    type: double
+  - prp: location_lng
+    src: location_lng
+    type: double
+  - prp: country
+    src: country
+    type: varchar
+  - prp: language
+    src: language
+    type: varchar
+  - prp: city
+    src: city
+    type: varchar
+  - prp: region
+    src: region
+    type: varchar
+  - prp: dma
+    src: dma
+    type: varchar
+  - prp: ip_address
+    src: ip_address
+    type: varchar
+  - prp: event_properties
+    src: event_properties
+    type: varchar
+  - prp: user_properties
+    src: user_properties
+    type: varchar
+  - prp: uuid
+    src: uuid
+    type: varchar
+  - prp: email
+    src: email
+    type: varchar
+  - prp: phone_number
+    src: phone_number
+    type: varchar
+  - prp: time
+    src: time
+    type: bigint
+  prp_table_name: not exists
+  src_table_name: app_analytics
+# - columns:
+#   - prp: survey_id
+#     src: survey_id
+#     type: varchar
+#   - prp: respondent_id
+#     src: respondent_id
+#     type: varchar
+#   - prp: question_id
+#     src: question_id
+#     type: varchar
+#   - prp: question_text
+#     src: question_text
+#     type: varchar
+#   - prp: answer
+#     src: answer
+#     type: varchar
+#   - prp: answer_numeric
+#     src: answer_numeric
+#     type: double
+#   - prp: submitted_at
+#     src: submitted_at
+#     type: varchar
+#   - prp: customer_id
+#     src: customer_id
+#     type: varchar
+#   - prp: email
+#     src: email
+#     type: varchar
+#   - prp: phone_number
+#     src: phone_number
+#     type: varchar
+#   - prp: time
+#     src: time
+#     type: bigint
+#   prp_table_name: not exists
+#   src_table_name: survey_responses
+- columns:
+  - prp: activity_type
+    src: activity_type
+    type: varchar
+  - prp: company_display_name
+    src: company_display_name
+    type: varchar
+  - prp: email
+    src: email
+    type: varchar
+  - prp: phone_number
+    src: phone_number
+    type: varchar    
+  - prp: message_type
+    src: message_type
+    type: varchar
+  - prp: message_name
+    src: message_name
+    type: varchar
+  - prp: message_text
+    src: message_text
+    type: varchar    
+  - prp: message_link
+    src: message_link
+    type: varchar  
+  - prp: message_creative
+    src: message_creative
+    type: varchar 
+  - prp: time
+    src: time
+    type: bigint
+  - prp: message_date
+    src: message_date
+    type: bigint    
+  prp_table_name: sms_activity
+  src_table_name: sms_activity
+- columns:
+  - prp: id
+    src: survey_id
+    type: varchar
+  - prp: user_reference
+    src: respondent_id
+    type: varchar
+  - prp: null
+    src: question_id
+    type: varchar
+  - prp: null
+    src: question_text
+    type: varchar
+  - prp: content
+    src: answer
+    type: varchar
+  - prp: score
+    src: answer_numeric
+    type: double
+  - prp: created_at
+    src: submitted_at
+    type: varchar
+  - prp: sku
+    src: customer_id
+    type: varchar
+  - prp: null
+    src: phone_number
+    type: varchar    
+  - prp: email
+    src: email
+    type: varchar    
+  - prp: time
+    src: time
+    type: bigint
+  prp_table_name: survey_responses
+  src_table_name: survey_responses
